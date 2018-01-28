@@ -97,11 +97,11 @@ var quizCollection = {
 			losses++;
 			$("#score").html("Nope !");
 			no.play();
-			$("#score").append('<br><br> The correct answer was:  ' + correctAns[j]);
+			$("#score").append('<br><br> Correct answer:  ' + correctAns[j]);
 		} else {
 			unanswered++;
 			$("#score").html("Time's Up !");
-			$("#score").append('<br><br> The correct answer was:  ' + correctAns[j]);
+			$("#score").append('<br><br> Correct answer:  ' + correctAns[j]);
 		}
 
 		correctAnsTime = setTimeout(quizCollection.question, 2000);
