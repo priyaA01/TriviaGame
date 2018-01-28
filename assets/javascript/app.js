@@ -82,6 +82,7 @@ var quizCollection = {
 		clearInterval(questionTime);
 
 		$(".answer").children("p").html("");
+		$("#answerSet").children("p").html("");
 		$("#score").css({
 			"display": "block"
 		});
@@ -112,6 +113,7 @@ var quizCollection = {
 	displayScore: function () {
 		$("#timeMsg").html("");
 		$(".answer").children("p").html("");
+		$("#answerSet").children("p").html("");
 		$("#score").css({
 			"display": "block"
 		});
@@ -135,7 +137,7 @@ $("#btnGamestart").on("click", quizCollection.question);
 
 
 /* answer select will set answer value and call display correct answer function */
-$("p").on("click", function () {
+$("#answerSet").children("p").on("click", function () {
 	answer = $(this).html();
 	answeredFlag = true;
 	quizCollection.displayCorrectAnswer(answer);
