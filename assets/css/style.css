@@ -1,7 +1,4 @@
- html{
-     min-height: 100%;
-     position:relative;
-}
+
  body{
      background-image: url("../images/background.jpg");
      background-repeat: no-repeat;
@@ -12,29 +9,17 @@
  header{
      font-family: 'Graduate', cursive;
      padding:10px;
-     font-size:70px;
+     font-size:60px;
      color:black;
      margin-bottom:30px;
 }
  #mainContainer{
-     margin-right: auto;
-     margin-left: auto;
      margin-bottom: 100px;
-}
- footer{
-     position:absolute;
-     bottom:0;
-     left:0;
-     width:100%;
-     clear:both;
-     color:black;
-     height:20px;
-     font-size:17px;
 }
  .btn{
      margin-top: 5%;
      margin-bottom:5%;
-     width:15%;
+     width:10%;
      background-color: black;
      color:white;
 }
@@ -43,22 +28,23 @@
      margin-top:5px;
      padding:10px;
      text-align: center;
-     font-size:40px;
-     font-family: 'Roboto Slab', serif;
-     line-height: 50px;    
+     font-family: 'Graduate', cursive;
+     font-size:25px;
+     line-height: 40px;     
 }
+
 #answerSet{
      cursor:pointer;
 }
- #answer1:hover,#answer2:hover,#answer3:hover,#answer4:hover{
-     background-color: red;
-     color:white;
-     display: inline;
-}
+
 #timeMsg{
      color:lightyellow;
 }
  #score{
      display:none;
 }
+.giphyImg{
+     width:220px;
+     height:200px;
+} 
  
