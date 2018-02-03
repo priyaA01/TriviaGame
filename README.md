@@ -16,4 +16,5 @@ Trivia Game is created with HTML, CSS and jQuery.
 
 
 ### Author
+
 Priya Ammaiyappan

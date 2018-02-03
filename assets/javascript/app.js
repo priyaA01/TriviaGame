@@ -34,13 +34,10 @@ var quizCollection = {
 		var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
 		$("#timeMsg").html("Time Left  " + timer);
 
-		if (i==questions.length) {
+		if (i == questions.length) {
 			quizCollection.displayScore();
 			clearInterval(questionTime);
 		} else {
-			$("#score").css({
-				"display": "none"
-			});
 			$("#question").html(quizCollection[questions[i]][0]);
 			$("#answer1").html(quizCollection[questions[i]][1][0]);
 			$("#answer2").html(quizCollection[questions[i]][1][1]);
@@ -80,29 +77,25 @@ var quizCollection = {
 	displayCorrectAnswer: function (answer) {
 		var correctAns = ["French Horn", "Butterfly", "Goliath National Bank", "Ducky Tie", "The Daddy Rule", "Quinn", "Patrice", "Olive Theory", "Gary Blauman", "Penny"];
 		clearInterval(questionTime);
-
 		$(".answer").children("p").html("");
 		$("#answerSet").children("p").html("");
-		$("#score").css({
-			"display": "block"
-		});
 
 		var j = i - 1;
 
 		if (correctAns.indexOf(answer) > -1 && answeredFlag == true) {
 			wins++;
-			$("#score").html("Correct !  <br><br>");
+			$("#question").html("Correct !  <br><br>");
 			pictures();
 			yes.play();
 		} else if (answeredFlag == true) {
 			losses++;
-			$("#score").html("Correct answer:  " + correctAns[j] +"<br><br>");
+			$("#question").html("Correct answer:  " + correctAns[j] + "<br><br>");
 			picturesWrong();
 			no.play();
 		} else {
 			unanswered++;
-			$("#score").html("Time's Up! <br>");
-			$("#score").append('<br>Correct answer:  ' + correctAns[j]);
+			$("#question").html("Time's Up! <br>");
+			$("#question").append('<br>Correct answer:  ' + correctAns[j]);
 		}
 
 		correctAnsTime = setTimeout(quizCollection.question, 2000);
@@ -115,15 +108,11 @@ var quizCollection = {
 		$("#timeMsg").html("");
 		$(".answer").children("p").html("");
 		$("#answerSet").children("p").html("");
-		$("#score").css({
-			"display": "block"
-		});
-
-		$("#score").html("Wins: " + wins + "<br>");
-		$("#score").append("Losses: " + losses + "<br>");
-		$("#score").append("Unanswered: " + unanswered + "<br><br>");
+		$("#question").html("Wins: " + wins + "<br>");
+		$("#question").append("Losses: " + losses + "<br>");
+		$("#question").append("Unanswered: " + unanswered + "<br><br>");
 		picturesFinal();
-		
+
 		i = 0;
 		wins = 0;
 		losses = 0;
@@ -146,45 +135,42 @@ $("#answerSet").children("p").on("click", function () {
 	quizCollection.displayCorrectAnswer(answer);
 });
 
- /* pulling images from giphy API through ajax calls*/
- function pictures(){
+/* pulling images from giphy API through ajax calls*/
+function pictures() {
 
-   var str="how"+"i"+"met"+"your"+"mother";
-   var queryURL = "https://api.giphy.com/v1/gifs/search?q="+str+"&api_key=dc6zaTOxFJmzC";
- 
-   $.ajax({
-    url: queryURL,
-    method: "GET"
-   }).then(function(response) {
-   	$("#score").append("<img class='giphyImg'  src="+JSON.stringify(response.data[7].images.fixed_width.url)+">");
+	var str = "how" + "i" + "met" + "your" + "mother";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + str + "&api_key=dc6zaTOxFJmzC";
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function (response) {
+		$("#question").append("<img class='giphyImg'  src=" + JSON.stringify(response.data[7].images.fixed_width.url) + ">");
 
-    });
+	});
 }
 
-function picturesWrong(){
+function picturesWrong() {
 
-   var str="how"+"i"+"met"+"your"+"mother";
-   var queryURL = "https://api.giphy.com/v1/gifs/search?q="+str+"&api_key=dc6zaTOxFJmzC";
- 
-   $.ajax({
-    url: queryURL,
-    method: "GET"
-   }).then(function(response) {
-   	$("#score").append("<img class='giphyImg' src="+JSON.stringify(response.data[6].images.fixed_height.url)+"><br>");
+	var str = "how" + "i" + "met" + "your" + "mother";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + str + "&api_key=dc6zaTOxFJmzC";
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function (response) {
+		$("#question").append("<img class='giphyImg' src=" + JSON.stringify(response.data[6].images.fixed_height.url) + "><br>");
 
-    });
+	});
 }
 
-function picturesFinal(){
+function picturesFinal() {
 
-   var str="how"+"i"+"met"+"your"+"mother";
-   var queryURL = "https://api.giphy.com/v1/gifs/search?q="+str+"&api_key=dc6zaTOxFJmzC";
- 
-   $.ajax({
-    url: queryURL,
-    method: "GET"
-   }).then(function(response) {
-   	$("#score").append("<img class='giphyImg' src="+JSON.stringify(response.data[2].images.fixed_height.url)+"><br>");
+	var str = "how" + "i" + "met" + "your" + "mother";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + str + "&api_key=dc6zaTOxFJmzC";
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function (response) {
+		$("#question").append("<img class='giphyImg' src=" + JSON.stringify(response.data[2].images.fixed_height.url) + "><br>");
 
-    });
+	});
 }

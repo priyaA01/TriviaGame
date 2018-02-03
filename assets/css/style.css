@@ -1,10 +1,6 @@
-
  body{
-     background-image: url("../images/background.jpg");
-     background-repeat: no-repeat;
-     background-position: center top;
-     background-attachment: fixed: 
      min-height:100%;
+     background-image: url("../images/background.png");
 }
  header{
      font-family: 'Graduate', cursive;
@@ -19,32 +15,35 @@
  .btn{
      margin-top: 5%;
      margin-bottom:5%;
-     width:10%;
      background-color: black;
      color:white;
+     box-shadow: 5px 5px #888888;
 }
- .answer,#timeMsg,#score{
-     color:red;
+ .answer,#timeMsg{
+     color:green;
      margin-top:5px;
      padding:10px;
      text-align: center;
      font-family: 'Graduate', cursive;
      font-size:25px;
-     line-height: 40px;     
+     line-height: 40px;
 }
-
-#answerSet{
+ #box{
+     background-color: white;
+     border-radius:20px;
+     border: 1px solid black;
+     padding: 10px;
+     box-shadow: 10px 10px #888888;
+}
+ #answerSet{
      cursor:pointer;
+     color: orange;
 }
-
-#timeMsg{
-     color:lightyellow;
+ #timeMsg{
+     color:grey;
 }
- #score{
-     display:none;
-}
-.giphyImg{
+ .giphyImg{
      width:220px;
      height:200px;
-} 
+}
  
