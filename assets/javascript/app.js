@@ -32,7 +32,7 @@ var quizCollection = {
 
 		timer = 20;
 		var questions = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
-		$("#timeMsg").html("Time Left  " + timer);
+		$("#timeMsg").html("Time Left  " + timer + " <hr>");
 
 		if (i == questions.length) {
 			quizCollection.displayScore();
@@ -61,10 +61,10 @@ var quizCollection = {
 
 	/* function to display timer for each question , when out of time screen with correct answer is displayed*/
 	count: function () {
-		$("#timeMsg").html("Time Left  " + timer);
+		$("#timeMsg").html("Time Left  " + timer + " <hr>");
 		timer--;
 		if (timer == 0) {
-			$("#timeMsg").html("Time Left  " + timer);
+			$("#timeMsg").html("Time Left  " + timer + " <hr>");
 			answeredFlag = false;
 			answer = "";
 			quizCollection.displayCorrectAnswer(answer);

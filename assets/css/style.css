@@ -27,7 +27,7 @@
     font-size: 15px;
 }
  .btn{
-     margin-top: 5%;
+     margin-top: 2%;
      margin-bottom:5%;
      background-color: black;
      color:white;
@@ -35,8 +35,6 @@
 }
  .answer,#timeMsg{
      color:green;
-     margin-top:5px;
-     padding:10px;
      text-align: center;
      font-family: 'Graduate', cursive;
      font-size:25px;
@@ -50,6 +48,7 @@
      box-shadow: 10px 10px #888888;
 }
  #answerSet{
+     padding-top:2px;
      cursor:pointer;
      color: orange;
 }
