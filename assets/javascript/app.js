@@ -123,18 +123,6 @@ var quizCollection = {
 
 };
 
-
-/* on click of button start function question is called */
-$("#btnGamestart").on("click", quizCollection.question);
-
-
-/* answer select will set answer value and call display correct answer function */
-$("#answerSet").children("p").on("click", function () {
-	answer = $(this).html();
-	answeredFlag = true;
-	quizCollection.displayCorrectAnswer(answer);
-});
-
 /* pulling images from giphy API through ajax calls*/
 function pictures() {
 
@@ -174,3 +162,16 @@ function picturesFinal() {
 
 	});
 }
+
+
+
+/* on click of button start function question is called */
+$("#btnGamestart").on("click", quizCollection.question);
+
+
+/* answer select will set answer value and call display correct answer function */
+$("#answerSet").children("p").on("click", function () {
+	answer = $(this).html();
+	answeredFlag = true;
+	quizCollection.displayCorrectAnswer(answer);
+});
